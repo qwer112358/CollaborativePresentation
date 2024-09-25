@@ -11,6 +11,12 @@ const Whiteboard = () => {
   const [tool, setTool] = useState('pencil');
   const [currentShape, setCurrentShape] = useState(null);
   const stageRef = useRef(null);
+  const [selectedShapeIndex, setSelectedShapeIndex] = useState(null);
+
+  // Функция для выделения фигуры
+  const handleShapeClick = (index) => {
+    setSelectedShapeIndex(index);
+  };
 
   useEffect(() => {
     signalRService.startConnection();
@@ -30,6 +36,26 @@ const Whiteboard = () => {
       setLines([...drawingService.getLines()]);
     });
   }, []);
+
+  const moveShapeUp = (index) => {
+    if (index < lines.length - 1) {
+      const newLines = [...lines];
+      const temp = newLines[index];
+      newLines[index] = newLines[index + 1];
+      newLines[index + 1] = temp;
+      setLines(newLines);
+    }
+  };
+
+  const moveShapeDown = (index) => {
+    if (index > 0) {
+      const newLines = [...lines];
+      const temp = newLines[index];
+      newLines[index] = newLines[index - 1];
+      newLines[index - 1] = temp;
+      setLines(newLines);
+    }
+  };
 
   const handleMouseDown = () => {
     const pos = stageRef.current.getPointerPosition();
@@ -109,7 +135,11 @@ const Whiteboard = () => {
         style={{ border: '1px solid black' }}
       >
         <Layer>
-          <Shapes lines={lines} currentShape={currentShape} />
+          <Shapes
+            lines={lines}
+            currentShape={currentShape}
+            onShapeClick={handleShapeClick}
+          />
         </Layer>
       </Stage>
     </div>

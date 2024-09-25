@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line, Rect, Circle, Arrow } from 'react-konva';
 
-const Shapes = ({ lines, currentShape }) => {
+const Shapes = ({ lines, currentShape, onShapeClick }) => {
   return (
     <>
       {/* Отрисовка всех нарисованных линий и фигур */}
@@ -16,6 +16,8 @@ const Shapes = ({ lines, currentShape }) => {
               height={Math.abs(line.endY - line.startY)}
               stroke={line.stroke}
               strokeWidth={line.strokeWidth}
+              onClick={() => onShapeClick(i)} // Добавляем клик для выбора фигуры
+              draggable // Добавляем возможность перетаскивания
             />
           );
         } else if (line.tool === 'circle') {
@@ -31,6 +33,8 @@ const Shapes = ({ lines, currentShape }) => {
               radius={radius}
               stroke={line.stroke}
               strokeWidth={line.strokeWidth}
+              onClick={() => onShapeClick(i)} // Добавляем клик для выбора фигуры
+              draggable // Добавляем возможность перетаскивания
             />
           );
         } else if (line.tool === 'arrow') {
@@ -40,6 +44,8 @@ const Shapes = ({ lines, currentShape }) => {
               points={[line.startX, line.startY, line.endX, line.endY]}
               stroke={line.stroke}
               strokeWidth={line.strokeWidth}
+              onClick={() => onShapeClick(i)} // Добавляем клик для выбора фигуры
+              draggable // Добавляем возможность перетаскивания
             />
           );
         } else {
@@ -52,6 +58,8 @@ const Shapes = ({ lines, currentShape }) => {
               tension={0.5}
               lineCap="round"
               lineJoin="round"
+              onClick={() => onShapeClick(i)} // Добавляем клик для выбора фигуры
+              draggable // Добавляем возможность перетаскивания
             />
           );
         }
