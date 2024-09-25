@@ -11,6 +11,7 @@ const Whiteboard = () => {
   const [tool, setTool] = useState('pencil');
   const [currentShape, setCurrentShape] = useState(null);
   const stageRef = useRef(null);
+  const [color, setColor] = useState('#000000');
   const [selectedShapeIndex, setSelectedShapeIndex] = useState(null);
 
   // Функция для выделения фигуры
@@ -60,11 +61,11 @@ const Whiteboard = () => {
   const handleMouseDown = () => {
     const pos = stageRef.current.getPointerPosition();
     if (tool === 'pencil') {
-      drawingService.startDrawing(pos); // Рисуем линии
+      drawingService.startDrawing(pos, color); // Передаем выбранный цвет
     } else if (tool === 'eraser') {
-      drawingService.startDrawing(pos, 'white', 20); // Использует белый цвет и ширину 20 для ластика
+      drawingService.startDrawing(pos, 'white', 20); // Ластик
     } else if (['rect', 'circle', 'arrow'].includes(tool)) {
-      drawingService.startShapeDrawing(tool, pos.x, pos.y); // Начинаем рисование фигуры
+      drawingService.startShapeDrawing(tool, pos.x, pos.y, color); // Начинаем рисование фигуры с цветом
     }
   };
 
@@ -124,7 +125,7 @@ const Whiteboard = () => {
 
   return (
     <div>
-      <ToolBar setTool={setTool} />
+      <ToolBar setTool={setTool} setColor={setColor} />
       <Stage
         width={window.innerWidth}
         height={window.innerHeight}
