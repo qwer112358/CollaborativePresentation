@@ -1,0 +1,6 @@
+@Whiteboard_HostAddress = http://localhost:5247
+
+GET {{Whiteboard_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

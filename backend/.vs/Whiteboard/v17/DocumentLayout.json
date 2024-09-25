@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{417397DA-D093-47E4-8A43-54BEBC53C33E}|Whiteboard\\Whiteboard.csproj|c:\\users\\user\\source\\repos\\whiteboard\\backend\\whiteboard\\models\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{417397DA-D093-47E4-8A43-54BEBC53C33E}|Whiteboard\\Whiteboard.csproj|solutionrelative:whiteboard\\models\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{417397DA-D093-47E4-8A43-54BEBC53C33E}|Whiteboard\\Whiteboard.csproj|c:\\users\\user\\source\\repos\\whiteboard\\backend\\whiteboard\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{417397DA-D093-47E4-8A43-54BEBC53C33E}|Whiteboard\\Whiteboard.csproj|solutionrelative:whiteboard\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{417397DA-D093-47E4-8A43-54BEBC53C33E}|Whiteboard\\Whiteboard.csproj|c:\\users\\user\\source\\repos\\whiteboard\\backend\\whiteboard\\hubs\\whiteboardhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{417397DA-D093-47E4-8A43-54BEBC53C33E}|Whiteboard\\Whiteboard.csproj|solutionrelative:whiteboard\\hubs\\whiteboardhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{417397DA-D093-47E4-8A43-54BEBC53C33E}|Whiteboard\\Whiteboard.csproj|c:\\users\\user\\source\\repos\\whiteboard\\backend\\whiteboard\\controllers\\whiteboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{417397DA-D093-47E4-8A43-54BEBC53C33E}|Whiteboard\\Whiteboard.csproj|solutionrelative:whiteboard\\controllers\\whiteboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\Whiteboard\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Whiteboard\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\Whiteboard\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Whiteboard\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T11:32:37.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WhiteboardHub.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\Whiteboard\\Hubs\\WhiteboardHub.cs",
+              "RelativeDocumentMoniker": "Whiteboard\\Hubs\\WhiteboardHub.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\Whiteboard\\Hubs\\WhiteboardHub.cs",
+              "RelativeToolTip": "Whiteboard\\Hubs\\WhiteboardHub.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:44:49.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WhiteboardController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\Whiteboard\\Controllers\\WhiteboardController.cs",
+              "RelativeDocumentMoniker": "Whiteboard\\Controllers\\WhiteboardController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\Whiteboard\\Controllers\\WhiteboardController.cs",
+              "RelativeToolTip": "Whiteboard\\Controllers\\WhiteboardController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAAB0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:44:32.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Line.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\Whiteboard\\Models\\Line.cs",
+              "RelativeDocumentMoniker": "Whiteboard\\Models\\Line.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Whiteboard\\backend\\Whiteboard\\Models\\Line.cs",
+              "RelativeToolTip": "Whiteboard\\Models\\Line.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T10:43:43.898Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
