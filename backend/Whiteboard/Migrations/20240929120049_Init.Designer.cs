@@ -12,7 +12,7 @@ using Whiteboard.Data;
 namespace Whiteboard.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240925100127_Init")]
+    [Migration("20240929120049_Init")]
     partial class Init
     {
         /// <inheritdoc />

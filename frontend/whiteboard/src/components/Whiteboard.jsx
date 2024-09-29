@@ -14,7 +14,6 @@ const Whiteboard = () => {
   const [color, setColor] = useState('#000000');
   const [selectedShapeIndex, setSelectedShapeIndex] = useState(null);
 
-  // Функция для выделения фигуры
   const handleShapeClick = (index) => {
     setSelectedShapeIndex(index);
   };
@@ -28,6 +27,7 @@ const Whiteboard = () => {
     });
 
     signalRService.onLoadPreviousDrawings((savedLines) => {
+      console.log('saved', savedLines);
       drawingService.addExternalDraw(
         savedLines.map((line) => ({
           points: JSON.parse(line.points),
@@ -61,11 +61,11 @@ const Whiteboard = () => {
   const handleMouseDown = () => {
     const pos = stageRef.current.getPointerPosition();
     if (tool === 'pencil') {
-      drawingService.startDrawing(pos, color); // Передаем выбранный цвет
+      drawingService.startDrawing(pos, color);
     } else if (tool === 'eraser') {
-      drawingService.startDrawing(pos, 'white', 20); // Ластик
+      drawingService.startDrawing(pos, 'white', 20);
     } else if (['rect', 'circle', 'arrow'].includes(tool)) {
-      drawingService.startShapeDrawing(tool, pos.x, pos.y, color); // Начинаем рисование фигуры с цветом
+      drawingService.startShapeDrawing(tool, pos.x, pos.y, color);
     }
   };
 
@@ -74,15 +74,14 @@ const Whiteboard = () => {
 
     if (drawingService.isDrawing) {
       if (['pencil', 'eraser'].includes(tool)) {
-        drawingService.continueDrawing(pos); // Продолжение рисования линии
+        drawingService.continueDrawing(pos);
       } else if (['rect', 'circle', 'arrow'].includes(tool)) {
-        drawingService.continueShapeDrawing(pos.x, pos.y); // Продолжение рисования фигуры
+        drawingService.continueShapeDrawing(pos.x, pos.y);
       }
 
-      setLines([...drawingService.getLines()]); // Обновляем линии/фигуры
+      setLines([...drawingService.getLines()]);
     }
 
-    // Обновляем текущую фигуру, чтобы показать её след
     if (
       ['rect', 'circle', 'arrow'].includes(tool) &&
       drawingService.currentShape
@@ -98,25 +97,23 @@ const Whiteboard = () => {
       const newLine = drawingService.endDrawing();
       setLines([...drawingService.getLines()]);
       signalRService.sendDrawAction('user1', [newLine]);
-      lineService.saveLine(newLine); // Сохраняем линию в базу данных
+      lineService.saveLine(newLine);
     } else if (['rect', 'circle', 'arrow'].includes(tool)) {
-      const shape = drawingService.endShapeDrawing(); // Завершаем рисование фигуры
+      const shape = drawingService.endShapeDrawing();
       setLines([...lines, shape]);
       signalRService.sendDrawAction('user1', [shape]);
 
-      // Формируем объект для сохранения фигуры
       const shapeToSave = {
         id: 0,
         points: null,
         stroke: shape.stroke,
         tool: shape.tool,
-        startX: Number(shape.startX), // Преобразуем в число
-        startY: Number(shape.startY), // Преобразуем в число
-        endX: Number(shape.endX), // Преобразуем в число
-        endY: Number(shape.endY), // Преобразуем в число
+        startX: Number(shape.startX),
+        startY: Number(shape.startY),
+        endX: Number(shape.endX),
+        endY: Number(shape.endY),
       };
 
-      // Сохраняем фигуру в базу данных
       lineService.saveLine(shapeToSave).catch((err) => {
         console.error('Error saving data to DB: ', err);
       });

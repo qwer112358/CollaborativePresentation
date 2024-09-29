@@ -3,11 +3,12 @@ import * as signalR from '@microsoft/signalr';
 class SignalRService {
   constructor() {
     this.connection = null;
+    this.port = 'http://localhost:5247/';
   }
 
   async startConnection() {
     this.connection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5247/whiteboardHub') // Укажите правильный URL
+      .withUrl(`${this.port}whiteboardHub`)
       .build();
 
     try {
@@ -18,10 +19,10 @@ class SignalRService {
     }
   }
 
-  // Получение всех предыдущих рисунков
   onLoadPreviousDrawings(callback) {
     if (this.connection) {
       this.connection.on('LoadPreviousDrawings', (lines) => {
+        //console.log('LoadPreviousDrawings', lines);
         callback(lines);
       });
     }
@@ -36,7 +37,10 @@ class SignalRService {
   }
 
   sendDrawAction(user, drawData) {
-    if (this.connection) {
+    if (
+      this.connection &&
+      this.connection.state === signalR.HubConnectionState.Connected
+    ) {
       this.connection
         .invoke('SendDrawAction', user, JSON.stringify(drawData))
         .catch((err) => console.error('SendDrawAction error: ', err));

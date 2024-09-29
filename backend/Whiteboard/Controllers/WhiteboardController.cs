@@ -16,7 +16,6 @@ namespace Whiteboard.Controllers
 			_context = context;
 		}
 
-		// Получение всех элементов с доски (линии, фигуры)
 		[HttpGet]
 		public async Task<IActionResult> GetWhiteboardLines()
 		{
@@ -24,7 +23,6 @@ namespace Whiteboard.Controllers
 			return Ok(lines);
 		}
 
-		// Сохранение новых элементов на доске
 		[HttpPost]
 		public async Task<IActionResult> SaveLine([FromBody] List<Line> lines)
 		{
